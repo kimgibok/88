@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조선 왕실 어필 글씨체</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>조선 왕실 어필 글씨체</h1>
+            <p class="subtitle">Joseon Royal Calligraphy Fonts</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- 왕 선택 -->
+        <div class="king-selector">
+            <h2 class="section-title">왕 선택</h2>
+            <div class="king-grid">
+                <div class="king-card active" data-king="jeongjo">
+                    <div class="king-name">정조</div>
+                    <div class="king-era">正祖 (1776-1800)</div>
+                </div>
+                <div class="king-card" data-king="seonjo">
+                    <div class="king-name">선조</div>
+                    <div class="king-era">宣祖 (1567-1608)</div>
+                </div>
+                <div class="king-card" data-king="sukjong">
+                    <div class="king-name">숙종</div>
+                    <div class="king-era">肅宗 (1674-1720)</div>
+                </div>
+                <div class="king-card" data-king="yeongjo">
+                    <div class="king-name">영조</div>
+                    <div class="king-era">英祖 (1724-1776)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 컨텐츠 그리드 -->
+        <div class="content-grid">
+            <!-- 원본 어필 이미지 -->
+            <div class="original-section">
+                <h2 class="section-title">원본 어필</h2>
+                <div class="original-image" id="originalImage">
+                    <div class="placeholder-text">
+                        원본 어필 이미지가 표시됩니다<br>
+                        <small>images/ 폴더에 이미지 파일을 추가하세요</small>
+                    </div>
+                </div>
+                <p class="image-caption" id="imageCaption"></p>
+            </div>
+
+            <!-- 미리보기 -->
+            <div class="preview-section">
+                <h2 class="section-title">폰트 미리보기</h2>
+                
+                <div class="input-group">
+                    <label for="textInput">텍스트 입력</label>
+                    <input 
+                        type="text" 
+                        id="textInput" 
+                        placeholder="한글만 입력 가능합니다..."
+                        value="왕의 글씨체"
+                    >
+                </div>
+
+                <div class="controls">
+                    <div class="size-control">
+                        <label>폰트 크기</label>
+                        <div class="slider-container">
+                            <input 
+                                type="range" 
+                                id="sizeSlider" 
+                                min="24" 
+                                max="128" 
+                                value="64"
+                            >
+                            <span class="size-value"><span id="sizeValue">64</span>px</span>
+                        </div>
+                    </div>
+
+                    <a href="#" id="downloadBtn" class="download-btn">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        폰트 다운로드
+                    </a>
+                </div>
+
+                <div class="preview-box">
+                    <div id="previewText" style="font-family: 'Jeongjo', serif;">왕의 글씨체</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 왕 정보 -->
+        <div class="info-panel">
+            <div class="king-info active" data-info="jeongjo">
+                <h3 class="info-title">정조 正祖 (1752-1800)</h3>
+                <p class="info-text">조선의 제22대 왕. 영조의 손자이자 사도세자의 아들로, 개혁 군주로 평가받습니다.</p>
+                <p class="info-text">정조의 글씨는 힘차고 단정하며, 왕의 권위와 학문적 깊이를 동시에 보여줍니다.</p>
+            </div>
+
+            <div class="king-info" data-info="seonjo">
+                <h3 class="info-title">선조 宣祖 (1552-1608)</h3>
+                <p class="info-text">조선의 제14대 왕. 임진왜란을 겪은 왕으로, 격동의 시기를 이끌었습니다.</p>
+                <p class="info-text">선조의 글씨는 유려하고 섬세하며, 문인 군주로서의 면모를 잘 보여줍니다.</p>
+            </div>
+
+            <div class="king-info" data-info="sukjong">
+                <h3 class="info-title">숙종 肅宗 (1661-1720)</h3>
+                <p class="info-text">조선의 제19대 왕. 강력한 왕권을 행사하며 환국 정치를 주도했습니다.</p>
+                <p class="info-text">숙종의 글씨는 강건하고 기백이 넘치며, 강한 카리스마를 느낄 수 있습니다.</p>
+            </div>
+
+            <div class="king-info" data-info="yeongjo">
+                <h3 class="info-title">영조 英祖 (1694-1776)</h3>
+                <p class="info-text">조선의 제21대 왕. 탕평책을 시행하며 52년간 재위한 장수 군주입니다.</p>
+                <p class="info-text">영조의 글씨는 안정적이고 균형잡혀 있으며, 평생의 학문적 수양이 묻어납니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 조선 왕실 어필 글씨체 프로젝트</p>
+        <p>Joseon Royal Calligraphy Font Project</p>
+    </footer>
+
+    <script>
+        const kingsData = {
+            jeongjo: {
+                name: '정조',
+                font: 'Jeongjo',
+                file: 'fonts/정조.ttf',
+                image: 'images/정조.png',
+                caption: '정조 어필 - 친필 글씨 원본'
+            },
+            seonjo: {
+                name: '선조',
+                font: 'Seonjo',
+                file: 'fonts/선조.ttf',
+                image: 'images/선조.png',
+                caption: '선조 어필 - 친필 글씨 원본'
+            },
+            sukjong: {
+                name: '숙종',
+                font: 'Sukjong',
+                file: 'fonts/숙종.ttf',
+                image: 'images/숙종칠언시.jpg',
+                caption: '숙종 어필 - 친필 글씨 원본'
+            },
+            yeongjo: {
+                name: '영조',
+                font: 'Yeongjo',
+                file: 'fonts/영조.ttf',
+                image: 'images/영조.png',
+                caption: '영조 어필 - 친필 글씨 원본'
+            }
+        };
+
+        let currentKing = 'jeongjo';
+
+        // 요소들
+        const kingCards = document.querySelectorAll('.king-card');
+        const textInput = document.getElementById('textInput');
+        const previewText = document.getElementById('previewText');
+        const sizeSlider = document.getElementById('sizeSlider');
+        const sizeValue = document.getElementById('sizeValue');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const originalImage = document.getElementById('originalImage');
+        const imageCaption = document.getElementById('imageCaption');
+        const kingInfos = document.querySelectorAll('.king-info');
+
+        // 왕 선택
+        kingCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const king = card.dataset.king;
+                
+                // 활성화 상태 변경
+                kingCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+
+                // 정보 패널 변경
+                kingInfos.forEach(info => info.classList.remove('active'));
+                document.querySelector(`[data-info="${king}"]`).classList.add('active');
+
+                // 현재 왕 업데이트
+                currentKing = king;
+                updateFont();
+                updateImage();
+                updateDownloadLink();
+            });
+        });
+
+        // 폰트 업데이트
+        function updateFont() {
+            const kingData = kingsData[currentKing];
+            previewText.style.fontFamily = `'${kingData.font}', serif`;
+        }
+
+        // 이미지 업데이트
+        function updateImage() {
+            const kingData = kingsData[currentKing];
+            originalImage.innerHTML = `
+                <img src="${kingData.image}" alt="${kingData.name} 어필" 
+                    onerror="this.parentElement.innerHTML='<div class=\\'placeholder-text\\'>원본 어필 이미지가 표시됩니다<br><small>images/ 폴더에 ${kingData.name}_어필.jpg 파일을 추가하세요</small></div>'">
+            `;
+            imageCaption.textContent = kingData.caption;
+        }
+
+        // 다운로드 링크 업데이트
+        function updateDownloadLink() {
+            const kingData = kingsData[currentKing];
+            downloadBtn.href = kingData.file;
+            downloadBtn.download = `${kingData.name}_글씨체.ttf`;
+        }
+
+        // 텍스트 입력 (한글과 공백만 허용)
+        textInput.addEventListener('input', (e) => {
+            // 완성형 한글(AC00-D7A3), 한글 자모(1100-11FF, 3130-318F), 공백 허용
+            const koreanOnly = e.target.value.replace(/[^\uAC00-\uD7A3\u1100-\u11FF\u3130-\u318F\s]/g, '');
+            
+            // 입력값이 바뀌었을 때만 업데이트 (커서 위치 유지)
+            if (e.target.value !== koreanOnly) {
+                const cursorPos = e.target.selectionStart;
+                e.target.value = koreanOnly;
+                e.target.setSelectionRange(cursorPos, cursorPos);
+            }
+            
+            // 미리보기 업데이트
+            const text = koreanOnly.trim();
+            previewText.textContent = text || '한글만 입력 가능합니다';
+        });
+
+        // 폰트 크기 조절
+        sizeSlider.addEventListener('input', (e) => {
+            const size = e.target.value;
+            previewText.style.fontSize = size + 'px';
+            sizeValue.textContent = size;
+        });
+
+        // 초기화
+        updateFont();
+        updateImage();
+        updateDownloadLink();
+    </script>
+</body>
+</html>
