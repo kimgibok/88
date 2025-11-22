@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자주 묻는 질문 - 조선 왕실 어필 글씨체</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>조선 왕실 어필 글씨체</h1>
+            <p class="subtitle">Joseon Royal Calligraphy Fonts</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">홈</a>
+            <a href="faq.html" class="active">자주 묻는 질문</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h2>자주 묻는 질문</h2>
+            <p>조선 왕실 어필 글씨체에 대해 자주 묻는 질문과 답변입니다.</p>
+        </div>
+
+        <div class="faq-section">
+        <div class="faq-category">
+            <h3 class="category-title">🔬 기술 관련 FAQ</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>소수 샘플 폰트 생성(Few-shot Font Generation, FFG)이란 무엇인가요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>FFG는 적은 수의 참조 글리프(예: 10개 미만)만을 사용하여 새로운 폰트 라이브러리를 생성하는 작업입니다. <br>
+                            테스트 시점에 추가적인 모델 미세 조정 없이 새로운 폰트 라이브러리를 생성하는 것을 목표로 합니다. <br>
+                            이는 중국어(> 50K 글리프), 한국어(약 11K 글리프), 태국어(약 11K 글리프)와 같이 글리프가 풍부하고 복잡한 특징을 가진 스크립트의 경우, 기존의 노동 집약적인 폰트 디자인 과정을 대체할 수 있어 매우 유용한 작업입니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>MX-Font는 무엇이며, 어떤 목표를 가지고 있나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>MX-Font (Multiple Localized Experts Few-shot Font Generation Network)는 새로운 소수 샘플 폰트 생성(FFG) 방법론입니다. MX-Font의 주요 목표는 다음과 같습니다:</p>
+                        <ul>
+                            <li><strong>대상 문자의 근본적인 전역 구조를 보존</strong> 하는 것.</li>
+                            <li><strong>다양한 지역 스타일 참조를 제시</strong>하는 것.</li>
+                            <li><strong>지역적 세부 사항에 대한 충분한 표현 능력</strong>과 <strong>알지 못하는 구성 요소 및 언어에 대한 일반화 가능성</strong>을 모두 달성하는 것입니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>기존 FFG 방법들은 어떤 한계를 가지고 있었으며, MX-Font는 이를 어떻게 해결하나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>기존의 FFG 방법들은 크게 두 가지로 분류됩니다:</p>
+                        <ul>
+                            <li><strong>보편적 스타일 표현 방법(Universal style representation methods): </strong> 각 폰트에 대해 단일 스타일 특징만을 추출하여, 글리프 이미지가 매우 복잡할 때 <strong>다양한 지역 스타일을 포착하는 데 실패</strong>하는 경우가 많습니다.</li>
+                            <li><strong>구성 요소 조건부 방법(Component-conditioned methods): </strong>구성 요소별 스타일 특징을 명시적으로 추출하여 지역 스타일을 포착하는 데 도움이 되지만, <strong>인코더가 특정 언어 도메인의 구성 요소 레이블에 단단히 결합</strong>되어 있어 학습 시 보지 못한 구성 요소가 있는 글리프를 처리하거나 <strong>교차 언어 폰트 생성을 수행하기 어렵습니다.</strong> </li>
+                        </ul>
+                        <p>MX-Font는 이러한 문제들을 완화하기 위해 <strong>다중 지역 전문가(Multiple Localized Experts)</strong>를 제안합니다. 
+                            이 전문가들은 구성 요소 레이블에 명시적으로 조건화되지 않지만, <strong>서로 다른 지역 개념을 표현하기 위해 다중 전문가가 자동으로 다중 스타일 특징을 추출</strong>합니다. 
+                            이를 통해 다양한 지역 개념을 포착하고 <strong>미지의 언어에 대한 일반화 가능성</strong>을 보여줍니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>'다중 지역 전문가'는 어떻게 작동하나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>MX-Font는 <strong>k개의 헤드(head)를 가진 인코더</strong>를 사용하며, 이를 다중 지역 전문가(E<sub>1</sub>, …, E<sub>k</sub>)라고 부릅니다.</p>
+                        <br>
+                        <h4>핵심 작동 원리:</h4>
+                        <ul>
+                            <li><strong>다중 전문가 구조:</strong> 각 지역 전문가(E<sub>i</sub>)는 복잡한 글리프 이미지로부터 <strong>서로 다른 지역 하위 개념에 특화</strong>되도록 학습됩니다.</li>
+                            <li><strong>특징 추출:</strong> 각 전문가는 입력 이미지를 지역 특징(f<sub>i</sub>)으로 인코딩하며, 이로부터 지역 내용 특징(f<sub>c,i</sub>)과 지역 스타일 특징(f<sub>s,i</sub>)이 계산됩니다.</li>
+                            <li><strong>약한 지도 학습:</strong> 명시적인 구성 요소 레이블 대신, 구성 요소 분류기(Cls<sub>u</sub>)와 스타일 분류기(Cls<sub>s</sub>)를 통한 약한 지도(weak supervision)로 학습합니다.</li>
+                            <li><strong>중복 방지:</strong> 각 전문가가 동일한 지역 개념을 학습하는 것을 방지하기 위해, 구성 요소 레이블 할당 문제를 <strong>그래프 매칭 문제로 공식화하고 헝가리안 알고리즘을 사용</strong>하여 최적으로 해결합니다.</li>
+                            <li><strong>자동 영역 분할:</strong> 실제로 각 전문가는 명시적인 픽셀 수준의 지도 없이도 <strong>이미지의 왼쪽 부분과 같은 서로 다른 지역 영역에 주의를 기울이는 것</strong>이 관찰되었습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span> MX-Font는 내용과 스타일을 어떻게 분리(Disentanglement)하나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>MX-Font는 내용-스타일 분리를 강화하기 위해 두 가지 주요 목표 함수를 사용합니다:</p>
+                        <ul>
+                            <li><strong>내용-스타일 적대적 손실(Content-style adversarial loss):</strong> 추출된 스타일 특징(f<sub>s,i</sub>)이 스타일 레이블을 정확하게 분류하는 동시에, 내용 분류기(Cls<sub>u</sub>)를 속여 균일한 예측을 하도록 최대 엔트로피(H)를 적용합니다. 내용 특징(f<sub>c,i</sub>) 역시 유사하게 스타일 분류기(Cls<sub>s</sub>)를 속이도록 학습됩니다.</li>
+                            <li><strong>독립성 손실(Independence loss):</strong> 내용 지역 특징(f<sub>c,i</sub>)과 스타일 지역 특징(f<sub>s,i</sub>) 간의 독립성을 측정하기 위해 Hilbert-Schmidt Independence Criterion (HSIC)을 사용하여 두 표현이 서로 독립적이 되도록 최소화합니다. 또한, 서로 다른 전문가들 사이의 지역 특징(f<sub>i</sub>, f<sub>i′</sub>)에 대해서도 독립성을 공식화합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span> MX-Font는 교차 언어 생성에서 어떤 성능을 보였나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>MX-Font는 기존의 최첨단 FFG 방법론들을 능가하는 성능을 보였습니다. 특히 다음 두 시나리오에서 평가되었습니다:</p>
+                        <ul>
+                            <li><strong>도메인 내 전이 시나리오 (중국어 → 중국어):</strong> 중국어 폰트로 훈련하고 보지 못한 중국어 폰트를 생성하는 시나리오에서, MX-Font는 분류 정확도(Acc (B) 78.7%) 및 사용자 연구 결과에서 다른 방법들을 능가했습니다.</li>
+                            <li><strong>제로 샷 교차 언어 전이 시나리오 (중국어 → 한국어):</strong> 중국어 폰트로 훈련하고 한국어 폰트를 생성하는 시나리오에서, MX-Font는 다른 모든 방법을 훨씬 뛰어넘는 성능을 보였습니다. 사용자 연구 결과(User (B))는 89.2%를 기록하여 다른 모델들의 최고값 (15.6%)과 비교했을 때 시각적 품질에서 현저한 차이를 보였습니다.</li>
+                        </ul>
+                        <p>MX-Font는 교차 언어 시나리오에서도 상세한 지역 스타일과 내용을 모두 보존하고 그럴듯하며 인식 가능한 이미지를 일관되게 생성합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3 class="category-title">📜 '어필 (御筆)' 프로젝트 관련 FAQ</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>'어필' 프로젝트의 기획 의도는 무엇이며 목표는 무엇인가요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>이 프로젝트는 <strong>조선시대 왕들의 한자 어필(御筆)을 머신러닝으로 학습하여 현대 한글 폰트를 생성</strong>하고자 기획되었습니다.</p>
+                        <ul>
+                            <li><strong>기획 의도: </strong> 단순히 "무엇을 썼는가"를 넘어 "어떻게 썼는가", "누가 썼는가"에 대한 관심을 촉구하고, 글씨 자체가 가진 예술적, 역사적 가치를 현대인들이 직관적으로 체감할 수 있도록 하기 위함입니다.</li>
+                            <li><strong>프로젝트 목표: </strong> 조선시대 왕들의 어필을 현대인이 일상적으로 사용하는 한글로 확장하여, 글씨에 담긴 개성과 감정을 현대적으로 체험할 수 있도록 하며, 생성된 폰트를 활용한 미디어 아트 전시를 구현하는 것입니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>'어필' 프로젝트는 어떤 구성 요소와 알고리즘을 사용했나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>이 프로젝트는 소프트웨어(SW) 구성 요소와 하드웨어(HW) 구성 요소로 나뉘어 진행되었습니다.</p>
+                        <ul>
+                            <li><strong>SW 구성 요소 및 기능: </strong>
+                                <ul>
+                                    <li>데이터 전처리 (OpenCV, OCR): 조선시대 어필 이미지의 노이즈 제거 및 글자 영역 추출.</li>
+                                    <li>폰트 학습 (PyTorch): MX-Font를 이용한 교차 언어 학습.</li>
+                                    <li>변환 (SVG → TTF): FontForge를 사용하여 생성된 폰트를 TTF 파일로 변환.</li>
+                                    <li>미디어 아트: After Effects를 사용하여 콘텐츠 제작.</li>
+                                </ul>
+                            </li>
+                            <li><strong>HW 구성 요소: </strong><br> 
+                                원형 조형물(중앙 스크린), 초단초점 프로젝터, MadMapper를 활용한 맵핑, 삼베 전시물, 조명/음향 등 전시 출력을 위한 환경.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>MX-Font는 '어필' 프로젝트에서 어떻게 활용되었나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>'어필' 프로젝트는 MX-Font의 주요 강점인 <strong>교차 언어 (Cross-lingual) Few-shot Learning 능력</strong>을 활용했습니다.</p>
+                        <ul>
+                            <li><strong>입력: </strong> 조선시대 왕들의 <strong>한자 이미지(어필).</strong></li>
+                            <li><strong>처리: </strong> MX-Font를 사용하여 <strong>제한된 데이터로 학습</strong>하고, <strong>Localized Experts 구조</strong>를 통해 글자 특징을 학습합니다. 이 과정에서 한자 특징이 추출되고 한글 구조로 매핑됩니다 (한자 → 한글 전이).</li>
+                            <li><strong>출력: </strong> <strong>2,350자의 한글 글자 이미지</strong>가 생성되고 후처리 과정을 거쳐 TTF 파일로 변환됩니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3 class="category-title">💬 기타</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>폰트는 어떻게 설치하나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>다운로드한 .ttf 파일을 더블클릭하여 '설치' 버튼을 누르시면 됩니다.</p>
+                        <ul>
+                            <li><strong>Windows:</strong> C:\Windows\Fonts 폴더에 파일을 복사하거나, 파일을 우클릭하여 '설치' 선택</li>
+                            <li><strong>macOS:</strong> 서체 관리자(Font Book)를 열고 파일을 드래그 앤 드롭</li>
+                            <li><strong>설치 후:</strong> 사용 중인 프로그램을 재시작하면 폰트 목록에서 확인 가능</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>상업적으로 사용할 수 있나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>본 프로젝트는 교육 목적으로 제작된 캡스톤 프로젝트입니다. 상업적 사용에 대한 구체적인 라이선스는 추후 공지 예정입니다.</p>
+                        <p>현재는 개인 학습 및 비상업적 용도로만 사용을 권장드립니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>어떤 프로그램에서 사용할 수 있나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>대부분의 텍스트 편집 프로그램에서 사용 가능합니다:</p>
+                        <ul>
+                            <li>문서 작성: 한글(HWP), MS Word, Google Docs</li>
+                            <li>디자인: Adobe Photoshop, Illustrator, InDesign</li>
+                            <li>웹: CSS @font-face를 통한 웹폰트 적용</li>
+                            <li>기타: PowerPoint, Keynote 등 모든 오피스 프로그램</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>각 왕의 글씨는 어떤 차이가 있나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>각 왕의 성격과 시대상이 글씨에 반영되어 있습니다:</p>
+                        <ul>
+                            <li><strong>정조(正祖):</strong> 단정하고 힘찬 필체. 개혁 군주의 의지가 담김</li>
+                            <li><strong>선조(宣祖):</strong> 유려하고 섬세한 필체. 문인 군주의 면모</li>
+                            <li><strong>숙종(肅宗):</strong> 강건하고 기백 넘치는 필체. 강력한 왕권</li>
+                            <li><strong>영조(英祖):</strong> 안정적이고 균형잡힌 필체. 학문적 수양</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>모바일에서도 사용할 수 있나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>iOS와 Android 기기에서는 폰트 설치 방법이 제한적입니다:</p>
+                        <ul>
+                            <li><strong>iOS:</strong> iFont, AnyFont 등의 앱을 통해 설치 가능 (제한적)</li>
+                            <li><strong>Android:</strong> FontFix, iFont 등의 앱 활용 가능</li>
+                            <li><strong>권장:</strong> 모바일에서는 본 웹사이트의 미리보기 기능 이용</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>웹폰트로 사용할 수 있나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>네, 가능합니다. CSS에서 @font-face를 사용하여 웹폰트로 적용할 수 있습니다:</p>
+                        <pre><code>@font-face {
+        font-family: 'Jeongjo';
+        src: url('fonts/정조.ttf') format('truetype');
+    }
+
+    body {
+        font-family: 'Jeongjo', serif;
+    }</code></pre>
+                        <p>단, 파일 크기가 크므로 로딩 속도를 고려하여 사용하시기 바랍니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>어필 원본은 어디서 구했나요?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>국립중앙박물관, 국립고궁박물관, 한국학중앙연구원 등에서 공개한 조선 왕실 어필 자료를 참고하였습니다. 역사적 자료에 대한 철저한 고증을 거쳐 제작되었습니다.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 조선 왕실 어필 글씨체 프로젝트</p>
+        <p>Joseon Royal Calligraphy Font Project</p>
+    </footer>
+
+    <script>
+        // FAQ 토글
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // 모든 FAQ 닫기
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                
+                // 클릭한 항목만 열기 (이미 열려있었으면 닫힌 상태 유지)
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
